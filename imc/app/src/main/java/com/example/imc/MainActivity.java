@@ -20,18 +20,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         peso = findViewById(R.id.textPeso);
         altura = findViewById(R.id.textAltura);
-
     }
 
     public void imc(View v) throws URISyntaxException {
-        Double pesoC = Double.valueOf(R.id.textPeso);
-        Double alturaC = Double.valueOf(R.id.textAltura);
+        Double pesoC = Double.valueOf(peso.getText().toString());
+        Double alturaC = Double.valueOf(altura.getText().toString());
 
-
-        String StringIMC = String.valueOf(pesoC/(alturaC*alturaC));
+        String StringIMC = String.valueOf(pesoC / (alturaC * alturaC));
 
         Intent i = new Intent(MainActivity.this, Activity2.class);
-        i.putExtra("imc",StringIMC);
+        i.putExtra("msg", StringIMC);
         startActivity(i);
 
     }
