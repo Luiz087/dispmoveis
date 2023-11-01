@@ -1,2 +1,5 @@
-package com.example.sqldatabase.vision;public class Inserir {
+package com.example.sqldatabase.vision;
+
+public class Inserir {
+
 }

@@ -1,9 +1,10 @@
-package com.example.sqldatabase;
+package com.example.sqldatabase.vision;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -13,10 +14,39 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.example.sqldatabase.R;
+import com.example.sqldatabase.controller.NotaController;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    ListView listView;
+
+    FloatingActionButton floatingActionButton;
+
+    NotaController notaController;
+
+    protected void OnCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        listView = findViewById(listView);
+        floatingActionButton = findViewById(floatingActionButton);
+        notaController = new NotaController(this);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(this, Cadastro.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+
+
+/*
     SQLiteDatabase db;
     Button button;
 
@@ -59,5 +89,5 @@ public class MainActivity extends AppCompatActivity {
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1,listaNotas);
         listView.setAdapter(arrayAdapter);
-    }
+    }*/
 }
