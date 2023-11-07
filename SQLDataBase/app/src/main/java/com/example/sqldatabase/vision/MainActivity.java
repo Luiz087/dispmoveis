@@ -22,31 +22,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listView;
-
-    FloatingActionButton floatingActionButton;
-
-    NotaController notaController;
-
-    protected void OnCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        listView = findViewById(listView);
-        floatingActionButton = findViewById(floatingActionButton);
-        notaController = new NotaController(this);
-
-        floatingActionButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Intent intent = new Intent(this, Cadastro.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-
-
-
-/*
     SQLiteDatabase db;
     Button button;
 
@@ -89,5 +64,5 @@ public class MainActivity extends AppCompatActivity {
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1,listaNotas);
         listView.setAdapter(arrayAdapter);
-    }*/
+    }
 }
